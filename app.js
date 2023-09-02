@@ -1,6 +1,7 @@
 const express = require('express');
 const { Sequelize } = require('sequelize');
 const userModel = require('./models/User');
+const cors = require('cors');
 
 const app = express();
 const port = 3000;
