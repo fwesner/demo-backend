@@ -5,6 +5,10 @@ const userModel = require('./models/User');
 const app = express();
 const port = 3000;
 
+app.use(cors({
+    origin: '*'
+}));
+
 // Configuración de Sequelize y conexión a la base de datos SQLite
 const sequelize = new Sequelize(process.env.DATABASE_URL);
 
