@@ -1,0 +1,15 @@
+{
+  "name": "backend-example",
+  "version": "1.0.0",
+  "description": "Backend example with Express and SQLite",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "author": "Tu Nombre",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.1",
+    "sqlite3": "^5.0.2"
+  }
+}
