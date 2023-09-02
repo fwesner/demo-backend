@@ -6,10 +6,7 @@ const app = express();
 const port = 3000;
 
 // Configuración de Sequelize y conexión a la base de datos SQLite
-const sequelize = new Sequelize({
-  dialect: 'sqlite',
-  storage: 'mydb.sqlite', // Nombre de la base de datos SQLite
-});
+const sequelize = new Sequelize(process.env.DATABASE_URL);
 
 // Definir el modelo User
 const User = userModel(sequelize);
