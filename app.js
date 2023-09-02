@@ -1,5 +1,5 @@
 const express = require('express');
-const { Sequelize } = require('sequelize');
+const { Sequelize, DataTypes } = require('sequelize');
 const userModel = require('./models/User');
 const cors = require('cors');
 
@@ -13,8 +13,17 @@ app.use(cors({
 // Configuración de Sequelize y conexión a la base de datos SQLite
 const sequelize = new Sequelize(process.env.DATABASE_URL);
 
-// Definir el modelo User
-const User = userModel(sequelize);
+const User = sequelize.define('User', {
+  id: {
+    type: DataTypes.INTEGER,
+    primaryKey: true,
+    autoIncrement: true,
+  },
+  name: {
+    type: DataTypes.STRING,
+    allowNull: false,
+  },
+});
 
 // Sincronizar el modelo con la base de datos (crear la tabla si no existe)
 sequelize.sync()
